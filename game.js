@@ -12,8 +12,6 @@ var stopCurrGame = false;
 var buttonHasBeenPressed = false;
 var loading = false;
 
-// var input = prompt("Please input the game speed [1-3] (any other input will be consider normal speed):");
-
 $(".btn").click(function(event) {
     console.log(event);
     if (!loading) {
@@ -25,6 +23,7 @@ $(".btn").click(function(event) {
         // Start Game
         if (!buttonHasBeenPressed) {
             startGame();
+            $(".instructionMenu").css("visibility", "hidden");
         }
         else if (!stopCurrGame && buttonHasBeenPressed) {
             buttonPressNum++;
@@ -81,9 +80,10 @@ function checkAnswer(numberOfIndexToCheck) {
 }
 
 function gameOver() {
+    $(".instructionMenu").css("visibility", "visible");
     playSound("wrong", 0.2);
     stopCurrGame = true;
-    $("h1").html("Game Over!<br><br>Press any button to restart");
+    $("h1").html("Game Over!");
     $("body").addClass("game-over");
     setTimeout(function() {
         $("body").removeClass("game-over");

@@ -6,6 +6,12 @@ body {
     overflow: hidden;
 }
 
+.text {
+    font-family: 'Press Start 2P', cursive;
+    margin:  0% 5% 3%;
+    color: #FEF2BF;
+}
+
 .particles-js-canvas-el {
     top: 0;
     left: 0;
